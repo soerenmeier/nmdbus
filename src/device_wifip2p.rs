@@ -70,10 +70,10 @@ impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceWifi
     }
 
     fn hw_address(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WifiP2P", "HwAddress")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WifiP2P", "HwAddress")
     }
 
     fn peers(&self) -> Result<Vec<dbus::Path<'static>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WifiP2P", "Peers")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WifiP2P", "Peers")
     }
 }

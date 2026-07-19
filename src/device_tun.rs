@@ -17,30 +17,30 @@ pub trait DeviceTun {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceTun for blocking::Proxy<'a, C> {
 
     fn owner(&self) -> Result<i64, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "Owner")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "Owner")
     }
 
     fn group(&self) -> Result<i64, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "Group")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "Group")
     }
 
     fn mode(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "Mode")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "Mode")
     }
 
     fn no_pi(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "NoPi")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "NoPi")
     }
 
     fn vnet_hdr(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "VnetHdr")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "VnetHdr")
     }
 
     fn multi_queue(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "MultiQueue")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "MultiQueue")
     }
 
     fn hw_address(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Tun", "HwAddress")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Tun", "HwAddress")
     }
 }

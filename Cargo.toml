@@ -1,8 +1,8 @@
 [package]
 name = "nmdbus"
 description = "Dbus bindings to the network manager."
-version = "1.37.3"
-authors = ["Sören Meier <soeren@s-me.ch>"]
+version = "1.42.8"
+authors = ["Sören Meier <soeren@meierlabs.ch>"]
 repository = "https://github.com/soerenmeier/nmdbus"
 license = "MIT OR Apache-2.0"
 edition = "2021"

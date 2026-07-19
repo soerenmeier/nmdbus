@@ -13,14 +13,14 @@ pub trait DeviceOlpcMesh {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceOlpcMesh for blocking::Proxy<'a, C> {
 
     fn hw_address(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.OlpcMesh", "HwAddress")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.OlpcMesh", "HwAddress")
     }
 
     fn companion(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.OlpcMesh", "Companion")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.OlpcMesh", "Companion")
     }
 
     fn active_channel(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.OlpcMesh", "ActiveChannel")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.OlpcMesh", "ActiveChannel")
     }
 }

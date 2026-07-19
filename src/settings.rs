@@ -106,14 +106,14 @@ impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> Settings f
     }
 
     fn connections(&self) -> Result<Vec<dbus::Path<'static>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Settings", "Connections")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Settings", "Connections")
     }
 
     fn hostname(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Settings", "Hostname")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Settings", "Hostname")
     }
 
     fn can_modify(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Settings", "CanModify")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Settings", "CanModify")
     }
 }

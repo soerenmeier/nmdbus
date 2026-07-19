@@ -11,6 +11,6 @@ pub trait DeviceAdsl {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceAdsl for blocking::Proxy<'a, C> {
 
     fn carrier(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Adsl", "Carrier")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Adsl", "Carrier")
     }
 }

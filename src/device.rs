@@ -19,7 +19,7 @@ pub trait Device {
     fn capabilities(&self) -> Result<u32, dbus::Error>;
     fn ip4_address(&self) -> Result<u32, dbus::Error>;
     fn state(&self) -> Result<u32, dbus::Error>;
-    fn state_reason(&self) -> Result<(u32, u32), dbus::Error>;
+    fn state_reason(&self) -> Result<(u32, u32,), dbus::Error>;
     fn active_connection(&self) -> Result<dbus::Path<'static>, dbus::Error>;
     fn ip4_config(&self) -> Result<dbus::Path<'static>, dbus::Error>;
     fn dhcp4_config(&self) -> Result<dbus::Path<'static>, dbus::Error>;
@@ -94,138 +94,138 @@ impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> Device for
     }
 
     fn udi(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Udi")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Udi")
     }
 
     fn path(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Path")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Path")
     }
 
     fn interface(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Interface")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Interface")
     }
 
     fn ip_interface(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "IpInterface")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "IpInterface")
     }
 
     fn driver(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Driver")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Driver")
     }
 
     fn driver_version(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "DriverVersion")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "DriverVersion")
     }
 
     fn firmware_version(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "FirmwareVersion")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "FirmwareVersion")
     }
 
     fn capabilities(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Capabilities")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Capabilities")
     }
 
     fn ip4_address(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Ip4Address")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Ip4Address")
     }
 
     fn state(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "State")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "State")
     }
 
-    fn state_reason(&self) -> Result<(u32, u32), dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "StateReason")
+    fn state_reason(&self) -> Result<(u32, u32,), dbus::Error> {
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "StateReason")
     }
 
     fn active_connection(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "ActiveConnection")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "ActiveConnection")
     }
 
     fn ip4_config(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Ip4Config")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Ip4Config")
     }
 
     fn dhcp4_config(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Dhcp4Config")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Dhcp4Config")
     }
 
     fn ip6_config(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Ip6Config")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Ip6Config")
     }
 
     fn dhcp6_config(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Dhcp6Config")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Dhcp6Config")
     }
 
     fn managed(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Managed")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Managed")
     }
 
     fn autoconnect(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Autoconnect")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Autoconnect")
     }
 
     fn firmware_missing(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "FirmwareMissing")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "FirmwareMissing")
     }
 
     fn nm_plugin_missing(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "NmPluginMissing")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "NmPluginMissing")
     }
 
     fn device_type(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "DeviceType")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "DeviceType")
     }
 
     fn available_connections(&self) -> Result<Vec<dbus::Path<'static>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "AvailableConnections")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "AvailableConnections")
     }
 
     fn physical_port_id(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "PhysicalPortId")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "PhysicalPortId")
     }
 
     fn mtu(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Mtu")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Mtu")
     }
 
     fn metered(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Metered")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Metered")
     }
 
     fn lldp_neighbors(&self) -> Result<Vec<arg::PropMap>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "LldpNeighbors")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "LldpNeighbors")
     }
 
     fn real(&self) -> Result<bool, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Real")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Real")
     }
 
     fn ip4_connectivity(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Ip4Connectivity")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Ip4Connectivity")
     }
 
     fn ip6_connectivity(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Ip6Connectivity")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Ip6Connectivity")
     }
 
     fn interface_flags(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "InterfaceFlags")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "InterfaceFlags")
     }
 
     fn hw_address(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "HwAddress")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "HwAddress")
     }
 
     fn ports(&self) -> Result<Vec<dbus::Path<'static>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device", "Ports")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device", "Ports")
     }
 
     fn set_managed(&self, value: bool) -> Result<(), dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::set(&self, "org.freedesktop.NetworkManager.Device", "Managed", value)
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::set(self, "org.freedesktop.NetworkManager.Device", "Managed", value)
     }
 
     fn set_autoconnect(&self, value: bool) -> Result<(), dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::set(&self, "org.freedesktop.NetworkManager.Device", "Autoconnect", value)
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::set(self, "org.freedesktop.NetworkManager.Device", "Autoconnect", value)
     }
 }

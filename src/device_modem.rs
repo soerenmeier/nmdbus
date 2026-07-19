@@ -15,22 +15,22 @@ pub trait DeviceModem {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceModem for blocking::Proxy<'a, C> {
 
     fn modem_capabilities(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Modem", "ModemCapabilities")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Modem", "ModemCapabilities")
     }
 
     fn current_capabilities(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Modem", "CurrentCapabilities")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Modem", "CurrentCapabilities")
     }
 
     fn device_id(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Modem", "DeviceId")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Modem", "DeviceId")
     }
 
     fn operator_code(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Modem", "OperatorCode")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Modem", "OperatorCode")
     }
 
     fn apn(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Modem", "Apn")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Modem", "Apn")
     }
 }

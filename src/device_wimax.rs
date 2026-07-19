@@ -72,34 +72,34 @@ impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceWiMa
     }
 
     fn nsps(&self) -> Result<Vec<dbus::Path<'static>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "Nsps")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "Nsps")
     }
 
     fn hw_address(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "HwAddress")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "HwAddress")
     }
 
     fn center_frequency(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "CenterFrequency")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "CenterFrequency")
     }
 
     fn rssi(&self) -> Result<i32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "Rssi")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "Rssi")
     }
 
     fn cinr(&self) -> Result<i32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "Cinr")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "Cinr")
     }
 
     fn tx_power(&self) -> Result<i32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "TxPower")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "TxPower")
     }
 
     fn bsid(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "Bsid")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "Bsid")
     }
 
     fn active_nsp(&self) -> Result<dbus::Path<'static>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WiMax", "ActiveNsp")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WiMax", "ActiveNsp")
     }
 }

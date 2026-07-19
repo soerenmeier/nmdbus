@@ -39,10 +39,10 @@ impl dbus::message::SignalArgs for VPNConnectionVpnStateChanged {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> VPNConnection for blocking::Proxy<'a, C> {
 
     fn vpn_state(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.VPN.Connection", "VpnState")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.VPN.Connection", "VpnState")
     }
 
     fn banner(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.VPN.Connection", "Banner")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.VPN.Connection", "Banner")
     }
 }

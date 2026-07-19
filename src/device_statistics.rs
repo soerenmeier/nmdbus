@@ -14,18 +14,18 @@ pub trait DeviceStatistics {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceStatistics for blocking::Proxy<'a, C> {
 
     fn refresh_rate_ms(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Statistics", "RefreshRateMs")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Statistics", "RefreshRateMs")
     }
 
     fn tx_bytes(&self) -> Result<u64, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Statistics", "TxBytes")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Statistics", "TxBytes")
     }
 
     fn rx_bytes(&self) -> Result<u64, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.Statistics", "RxBytes")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.Statistics", "RxBytes")
     }
 
     fn set_refresh_rate_ms(&self, value: u32) -> Result<(), dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::set(&self, "org.freedesktop.NetworkManager.Device.Statistics", "RefreshRateMs", value)
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::set(self, "org.freedesktop.NetworkManager.Device.Statistics", "RefreshRateMs", value)
     }
 }

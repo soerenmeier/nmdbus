@@ -13,14 +13,14 @@ pub trait WiMaxNsp {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> WiMaxNsp for blocking::Proxy<'a, C> {
 
     fn name(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WiMax.Nsp", "Name")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WiMax.Nsp", "Name")
     }
 
     fn signal_quality(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WiMax.Nsp", "SignalQuality")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WiMax.Nsp", "SignalQuality")
     }
 
     fn network_type(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WiMax.Nsp", "NetworkType")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WiMax.Nsp", "NetworkType")
     }
 }

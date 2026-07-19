@@ -228,6 +228,6 @@ impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> VPNPlugin 
     }
 
     fn state(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.VPN.Plugin", "State")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.VPN.Plugin", "State")
     }
 }

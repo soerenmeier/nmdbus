@@ -5,10 +5,10 @@ use dbus::arg;
 use dbus::blocking;
 
 pub trait IP6Config {
-    fn addresses(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>)>, dbus::Error>;
+    fn addresses(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>,)>, dbus::Error>;
     fn address_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error>;
     fn gateway(&self) -> Result<String, dbus::Error>;
-    fn routes(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>, u32)>, dbus::Error>;
+    fn routes(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>, u32,)>, dbus::Error>;
     fn route_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error>;
     fn nameservers(&self) -> Result<Vec<Vec<u8>>, dbus::Error>;
     fn domains(&self) -> Result<Vec<String>, dbus::Error>;
@@ -19,43 +19,43 @@ pub trait IP6Config {
 
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> IP6Config for blocking::Proxy<'a, C> {
 
-    fn addresses(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>)>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "Addresses")
+    fn addresses(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>,)>, dbus::Error> {
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "Addresses")
     }
 
     fn address_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "AddressData")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "AddressData")
     }
 
     fn gateway(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "Gateway")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "Gateway")
     }
 
-    fn routes(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>, u32)>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "Routes")
+    fn routes(&self) -> Result<Vec<(Vec<u8>, u32, Vec<u8>, u32,)>, dbus::Error> {
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "Routes")
     }
 
     fn route_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "RouteData")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "RouteData")
     }
 
     fn nameservers(&self) -> Result<Vec<Vec<u8>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "Nameservers")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "Nameservers")
     }
 
     fn domains(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "Domains")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "Domains")
     }
 
     fn searches(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "Searches")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "Searches")
     }
 
     fn dns_options(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "DnsOptions")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "DnsOptions")
     }
 
     fn dns_priority(&self) -> Result<i32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP6Config", "DnsPriority")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP6Config", "DnsPriority")
     }
 }

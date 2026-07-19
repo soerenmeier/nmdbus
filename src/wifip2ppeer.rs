@@ -20,42 +20,42 @@ pub trait WifiP2PPeer {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> WifiP2PPeer for blocking::Proxy<'a, C> {
 
     fn name(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Name")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Name")
     }
 
     fn flags(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Flags")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Flags")
     }
 
     fn manufacturer(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Manufacturer")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Manufacturer")
     }
 
     fn model(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Model")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Model")
     }
 
     fn model_number(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "ModelNumber")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "ModelNumber")
     }
 
     fn serial(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Serial")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Serial")
     }
 
     fn wfd_ies(&self) -> Result<Vec<u8>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "WfdIEs")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "WfdIEs")
     }
 
     fn hw_address(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "HwAddress")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "HwAddress")
     }
 
     fn strength(&self) -> Result<u8, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Strength")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "Strength")
     }
 
     fn last_seen(&self) -> Result<i32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.WifiP2PPeer", "LastSeen")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.WifiP2PPeer", "LastSeen")
     }
 }

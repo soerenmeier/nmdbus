@@ -13,14 +13,14 @@ pub trait DeviceWireGuard {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DeviceWireGuard for blocking::Proxy<'a, C> {
 
     fn public_key(&self) -> Result<Vec<u8>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WireGuard", "PublicKey")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WireGuard", "PublicKey")
     }
 
     fn listen_port(&self) -> Result<u16, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WireGuard", "ListenPort")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WireGuard", "ListenPort")
     }
 
     fn fw_mark(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Device.WireGuard", "FwMark")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Device.WireGuard", "FwMark")
     }
 }

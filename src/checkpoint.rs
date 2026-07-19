@@ -13,14 +13,14 @@ pub trait Checkpoint {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> Checkpoint for blocking::Proxy<'a, C> {
 
     fn devices(&self) -> Result<Vec<dbus::Path<'static>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Checkpoint", "Devices")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Checkpoint", "Devices")
     }
 
     fn created(&self) -> Result<i64, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Checkpoint", "Created")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Checkpoint", "Created")
     }
 
     fn rollback_timeout(&self) -> Result<u32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.Checkpoint", "RollbackTimeout")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.Checkpoint", "RollbackTimeout")
     }
 }

@@ -11,6 +11,6 @@ pub trait DHCP4Config {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> DHCP4Config for blocking::Proxy<'a, C> {
 
     fn options(&self) -> Result<arg::PropMap, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.DHCP4Config", "Options")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.DHCP4Config", "Options")
     }
 }

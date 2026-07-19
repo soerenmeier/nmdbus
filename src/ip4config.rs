@@ -23,54 +23,54 @@ pub trait IP4Config {
 impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> IP4Config for blocking::Proxy<'a, C> {
 
     fn addresses(&self) -> Result<Vec<Vec<u32>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "Addresses")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "Addresses")
     }
 
     fn address_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "AddressData")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "AddressData")
     }
 
     fn gateway(&self) -> Result<String, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "Gateway")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "Gateway")
     }
 
     fn routes(&self) -> Result<Vec<Vec<u32>>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "Routes")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "Routes")
     }
 
     fn route_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "RouteData")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "RouteData")
     }
 
     fn nameservers(&self) -> Result<Vec<u32>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "Nameservers")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "Nameservers")
     }
 
     fn nameserver_data(&self) -> Result<Vec<arg::PropMap>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "NameserverData")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "NameserverData")
     }
 
     fn domains(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "Domains")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "Domains")
     }
 
     fn searches(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "Searches")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "Searches")
     }
 
     fn dns_options(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "DnsOptions")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "DnsOptions")
     }
 
     fn dns_priority(&self) -> Result<i32, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "DnsPriority")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "DnsPriority")
     }
 
     fn wins_servers(&self) -> Result<Vec<u32>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "WinsServers")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "WinsServers")
     }
 
     fn wins_server_data(&self) -> Result<Vec<String>, dbus::Error> {
-        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(&self, "org.freedesktop.NetworkManager.IP4Config", "WinsServerData")
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.IP4Config", "WinsServerData")
     }
 }
