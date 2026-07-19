@@ -1,5 +1,5 @@
 //! dbus types for the NetworkManager api
-//! with the version 1.42.8
+//! with the version 1.46.2
 pub use dbus;
 pub mod accesspoint;
 pub mod agentmanager;
@@ -13,6 +13,7 @@ pub mod device_bond;
 pub mod device_bridge;
 pub mod device_dummy;
 pub mod device_generic;
+pub mod device_hsr;
 pub mod device_iptunnel;
 pub mod device_infiniband;
 pub mod device_loopback;

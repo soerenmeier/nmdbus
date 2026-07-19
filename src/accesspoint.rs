@@ -13,6 +13,7 @@ pub trait AccessPoint {
     fn hw_address(&self) -> Result<String, dbus::Error>;
     fn mode(&self) -> Result<u32, dbus::Error>;
     fn max_bitrate(&self) -> Result<u32, dbus::Error>;
+    fn bandwidth(&self) -> Result<u32, dbus::Error>;
     fn strength(&self) -> Result<u8, dbus::Error>;
     fn last_seen(&self) -> Result<i32, dbus::Error>;
 }
@@ -49,6 +50,10 @@ impl<'a, T: blocking::BlockingSender, C: ::std::ops::Deref<Target=T>> AccessPoin
 
     fn max_bitrate(&self) -> Result<u32, dbus::Error> {
         <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.AccessPoint", "MaxBitrate")
+    }
+
+    fn bandwidth(&self) -> Result<u32, dbus::Error> {
+        <Self as blocking::stdintf::org_freedesktop_dbus::Properties>::get(self, "org.freedesktop.NetworkManager.AccessPoint", "Bandwidth")
     }
 
     fn strength(&self) -> Result<u8, dbus::Error> {
